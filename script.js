@@ -1,9 +1,12 @@
-function fibonacci1(num) {
-  let arr = [0, 1];
-  for (let i = 2; i <= num; i++) {
-    arr.push(arr[i - 2] + arr[i - 1]);
-  }
-  return arr[num];
-}
+function fibonacci(num) {
+    if (num === 0) return 0;
+    if (num === 1) return 1;
 
-module.exports = fibonacci;
+    let a = 0, b = 1, fib;
+    for (let i = 2; i <= num; i++) {
+        fib = a + b;
+        a = b;
+        b = fib;
+    }
+    return fib;
+}
